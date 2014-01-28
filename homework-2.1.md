@@ -53,16 +53,59 @@ var root = this;
                           root.mozSpeechRecognition ||
                           root.msSpeechRecognition ||
                           root.oSpeechRecognition;
-// Variable: SpeechRecognition
-// Conditional Operator: ||
+   // Variable: SpeechRecognition
+   // Conditional Operator: ||
 ```
 
 `/cguidone/annyang/annyang.js:21-24`
 
 ```javascript
   if (!SpeechRecognition) {
+  // Boolean: if()
     root.annyang = null;
+    // null
     return undefined;
+    // undefined
   }
-// Boolean: if()
+```
+
+`/cguidone/annyang/annyang.js:26`
+
+```javascript
+  var commandsList = [];
+  // Variable: commandsList
+  // Array: []
+```
+
+```javascript  
+`/cguidone/annyang/annyang.js:27`
+  var recognition;
+  // Variable: recognition
+```
+
+```javascript  
+`/cguidone/annyang/annyang.js:31`
+  var debugState = false;
+  // Variable: debugState
+  // Boolean: False
+```
+
+```javascript  
+`/cguidone/annyang/annyang.js:48`
+      return new RegExp('^' + command + '$', 'i');
+  // Function: RegExp('^' + command + '$', 'i')
+  // Operator: addition
+```
+
+```javascript  
+`/cguidone/annyang/annyang.js:52-56`
+  var invokeCallbacks = function(callbacks) {
+  // Variable: invokeCallbacks
+  // Function: function(callbacks)
+    callbacks.forEach(function(callback) {
+    // Function: function inside function callbacks.forEach(function(callback)
+      callback.callback.apply(callback.context);
+      // Function: callback.callback.apply(callback.context)
+    });
+  };
 ```
