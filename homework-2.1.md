@@ -31,23 +31,23 @@ When you're done editing this file, save it, commit it, and push it to your "ass
 
 ## Now get to it!
 
-'/cguidone/annyang/annyang.js:1'
+`/cguidone/annyang/annyang.js:1`
 
-'''javascript
+```javascript
 //! annyang
 // Comments
-'''
+```
 
-'/cguidone/annyang/annyang.js:10'
+`/cguidone/annyang/annyang.js:10`
 
-'''javascript
+```javascript
 var root = this;
 // Variable: root
-'''
+```
 
-'/cguidone/annyang/annyang.js:13-17'
+`/cguidone/annyang/annyang.js:13-17`
 
-'''javascript
+```javascript
   var SpeechRecognition = root.SpeechRecognition ||
                           root.webkitSpeechRecognition ||
                           root.mozSpeechRecognition ||
@@ -55,14 +55,14 @@ var root = this;
                           root.oSpeechRecognition;
 // Variable: SpeechRecognition
 // Conditional Operator: ||
-'''
+```
 
-'/cguidone/annyang/annyang.js:21-24'
+`/cguidone/annyang/annyang.js:21-24`
 
-'''javascript
+```javascript
   if (!SpeechRecognition) {
     root.annyang = null;
     return undefined;
   }
 // Boolean: if()
-'''
+```
