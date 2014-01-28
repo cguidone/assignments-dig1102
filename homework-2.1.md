@@ -32,21 +32,18 @@ When you're done editing this file, save it, commit it, and push it to your "ass
 ## Now get to it!
 
 `/cguidone/annyang/annyang.js:1`
-
 ```javascript
 //! annyang
 // Comments
 ```
 
 `/cguidone/annyang/annyang.js:10`
-
 ```javascript
 var root = this;
 // Variable: root
 ```
 
 `/cguidone/annyang/annyang.js:13-17`
-
 ```javascript
   var SpeechRecognition = root.SpeechRecognition ||
                           root.webkitSpeechRecognition ||
@@ -58,7 +55,6 @@ var root = this;
 ```
 
 `/cguidone/annyang/annyang.js:21-24`
-
 ```javascript
   if (!SpeechRecognition) {
   // Boolean: if()
@@ -70,35 +66,34 @@ var root = this;
 ```
 
 `/cguidone/annyang/annyang.js:26`
-
 ```javascript
   var commandsList = [];
   // Variable: commandsList
   // Array: []
 ```
 
-```javascript  
 `/cguidone/annyang/annyang.js:27`
+```javascript  
   var recognition;
   // Variable: recognition
 ```
 
-```javascript  
 `/cguidone/annyang/annyang.js:31`
+```javascript  
   var debugState = false;
   // Variable: debugState
   // Boolean: False
 ```
 
-```javascript  
 `/cguidone/annyang/annyang.js:48`
+```javascript  
       return new RegExp('^' + command + '$', 'i');
   // Function: RegExp('^' + command + '$', 'i')
   // Operator: addition
 ```
 
-```javascript  
 `/cguidone/annyang/annyang.js:52-56`
+```javascript  
   var invokeCallbacks = function(callbacks) {
   // Variable: invokeCallbacks
   // Function: function(callbacks)
