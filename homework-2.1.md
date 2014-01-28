@@ -31,3 +31,65 @@ When you're done editing this file, save it, commit it, and push it to your "ass
 
 ## Now get to it!
 
+Code from annyang.js
+
+// The command matching code is a modified version of Backbone.Router by Jeremy Ashkenas, under the MIT license.
+  var optionalParam = /\s*\((.*?)\)\s*/g;
+  var optionalRegex = /(\(\?:[^)]+\))\?/g;
+  var namedParam    = /(\(\?)?:\w+/g;
+  var splatParam    = /\*\w+/g;
+  var escapeRegExp  = /[\-{}\[\]+?.,\\\^$|#]/g;
+  var commandToRegExp = function(command) {
+    command = command.replace(escapeRegExp, '\\$&')
+                  .replace(optionalParam, '(?:$1)?')
+                  .replace(namedParam, function(match, optional) {
+                    return optional ? match : '([^\\s]+)';
+                  })
+                  .replace(splatParam, '(.*?)')
+                  .replace(optionalRegex, '\\s*$1?\\s*');
+    return new RegExp('^' + command + '$', 'i');
+  };
+
+  // This method receives an array of callbacks to iterate over, and invokes each of them
+  var invokeCallbacks = function(callbacks) {
+    callbacks.forEach(function(callback) {
+      callback.callback.apply(callback.context);
+    });
+  };
+
+  var initIfNeeded = function() {
+    if (!isInitialized()) {
+      root.annyang.init({}, false);
+    }
+  };
+
+  var isInitialized = function() {
+    return recognition !== undefined;
+  };
+
+  root.annyang = {
+    // Initialize annyang with a list of commands to recognize.
+    // e.g. annyang.init({'hello :name': helloFunction})
+    // annyang understands commands with named variables, splats, and optional words.
+    init: function(commands, resetCommands) {
+
+      // resetCommands defaults to true
+      if (resetCommands === undefined) {
+        resetCommands = true;
+      } else {
+        resetCommands = !!resetCommands;
+      }
+
+      // Abort previous instances of recognition already running
+      if (recognition && recognition.abort) {
+        recognition.abort();
+      }
+
+      // initiate SpeechRecognition
+      recognition = new SpeechRecognition();
+
+      // Set the max number of alternative transcripts to try and match with a command
+      recognition.maxAlternatives = 5;
+      recognition.continuous = true;
+      // Sets the language to the default 'en-US'. This can be changed with annyang.setLanguage()
+      recognition.lang = 'en-US';
