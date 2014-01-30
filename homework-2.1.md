@@ -190,7 +190,7 @@ var root = this;
         // Interger: 2
 ```
 
-`/cguidone/annyang/Gruntfile.js:15`
+`/cguidone/annyang/Gruntfile.js:42-45`
 ```javascript  
     watch: {
     // Function: watch
