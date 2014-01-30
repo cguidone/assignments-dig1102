@@ -51,7 +51,7 @@ var root = this;
                           root.msSpeechRecognition ||
                           root.oSpeechRecognition;
    // Variable: SpeechRecognition
-   // Conditional Operator: ||
+   // Conditional Operator: || or
 ```
 
 `/cguidone/annyang/annyang.js:21-24`
@@ -88,8 +88,8 @@ var root = this;
 `/cguidone/annyang/annyang.js:48`
 ```javascript  
       return new RegExp('^' + command + '$', 'i');
-  // Function: RegExp('^' + command + '$', 'i')
-  // Operator: addition
+      // Function: RegExp('^' + command + '$', 'i')
+      // Operator: + addition
 ```
 
 `/cguidone/annyang/annyang.js:52-56`
@@ -103,4 +103,102 @@ var root = this;
       // Function: callback.callback.apply(callback.context)
     });
   };
+```
+
+`/cguidone/annyang/annyang.js:58-62`
+```javascript  
+  var initIfNeeded = function() {
+  // Variable: initIgNeeded
+  // Function: function()
+    if (!isInitialized()) {
+    // Boolean: if (!isInitialized())
+    // Function: !isInitialized()
+      root.annyang.init({}, false);
+      // Function: root.annyang.init({}, false)
+      // Boolean: False
+    }
+  };
+```
+
+`/cguidone/annyang/annyang.js:72`
+```javascript  
+    init: function(commands, resetCommands) {
+    // Function: function(commands, resetCommands)
+```
+
+`/cguidone/annyang/annyang.js:75-79`
+```javascript  
+      if (resetCommands === undefined) {
+      // Boolen: if (resetCommands === undefined)
+      // Undefined
+        resetCommands = true;
+        // Boolean: true
+      } else {
+        resetCommands = !!resetCommands;
+        // Boolean: else
+      }
+```
+
+`/cguidone/annyang/annyang.js:82-84`
+```javascript  
+      if (recognition && recognition.abort) {
+      // Boolean: if (recognition && recognition.abort)
+      // Conditional Operator: && and
+        recognition.abort();
+        // Function: recognition.abort()
+      }
+```
+
+`/cguidone/annyang/annyang.js:108-112`
+```javascript  
+          if (new Date().getTime()-lastStartedAt < 200) {
+          // Boolean: if (new Date().getTime()-lastStartedAt < 200)
+          // Function: new Date().getTime()
+          // Operator: - subtraction
+          // Operator: < less than
+          // Integer: 200
+            invokeCallbacks(callbacks.errorPermissionBlocked);
+            // Function: invokeCallbacks(callbacks.errorPermissionBlocked)
+          } else {
+          // Boolean: else
+            invokeCallbacks(callbacks.errorPermissionDenied);
+            // Function: invokeCallbacks(callbacks.errorPermissionDenied)
+          }
+```
+
+`/cguidone/annyang/Gruntfile.js:8-13`
+```javascript  
+      all: [
+        'Gruntfile.js',
+        'annyang.js',
+        'sites/facebook.js',
+        'sites/geektime.js',
+      ],
+      // Array: all: []
+      // .js files
+```
+
+`/cguidone/annyang/Gruntfile.js:15`
+```javascript  
+        "node"      : true,
+        // Boolean: true
+```
+
+`/cguidone/annyang/Gruntfile.js:39`
+```javascript  
+        "indent"    : 2
+        // Interger: 2
+```
+
+`/cguidone/annyang/Gruntfile.js:15`
+```javascript  
+    watch: {
+    // Function: watch
+      files: ['annyang.js', 'sites/facebook.js', 'sites/geektime.js', 'demo/css/main.css', '!**/node_modules/**'],
+      // Array: files: []
+      // .js files
+      // .css file
+      tasks: ['default'],
+      // Array: task: []
+    },
 ```
