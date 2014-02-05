@@ -1,5 +1,5 @@
 /*
-* Added where to find infomration about author and script
+* Added where to find information about author and script
 * https://github.com/GerHobbelt
 * https://raw.github.com/GerHobbelt/d3/master/d3.latest.js
 * Needs information on what the code does
