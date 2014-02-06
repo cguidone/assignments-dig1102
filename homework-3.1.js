@@ -7,24 +7,31 @@
 */
 
 !function() {
+    
+  // Added: Variable d3 is version 3.4.1    
   var d3 = {
     version: "3.4.1"
   };
   
+  // Added: Uses Date.Now functions in an if statement, returns +new Date()
   if (!Date.now) Date.now = function() {
     return +new Date();
   };
   
+  // Added: Creates an Array for Variable d3_arrayslice
   var d3_arraySlice = [].slice, d3_array = function(list) {
     return d3_arraySlice.call(list);
   };
   
+  // Added: Variable d3_document is created
   var d3_document = document, d3_documentElement = d3_document.documentElement, d3_window = window;
   
+  // Added: Start testing script
   try {
     d3_array(d3_documentElement.childNodes)[0].nodeType;
   }
   
+  // Added: More testing for array created earlier
   catch (e) {
     d3_array = function(list) {
       var i = list.length, array = new Array(i);
@@ -33,6 +40,7 @@
     };
   }
   
+  // Added: More testing
   try {
     d3_document.createElement("div").style.setProperty("opacity", 0, "");
   } 
