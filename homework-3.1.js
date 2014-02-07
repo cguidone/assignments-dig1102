@@ -23,15 +23,19 @@
     return d3_arraySlice.call(list);
   };
   
-  // Added: Variable d3_document is created
+  // Added: Variable d3_document is created, if others are variables would look cleaner on their own line.
   var d3_document = document, d3_documentElement = d3_document.documentElement, d3_window = window;
+  // Added: New Code Below
+  // var d3_document = document;
+  // var d3_documentElement = d3_document.documentElement;
+  // var d3_window = window;
   
-  // Added: Start testing script
+  // Added: Looks to be the start of testing script
   try {
     d3_array(d3_documentElement.childNodes)[0].nodeType;
   }
   
-  // Added: More testing for array created earlier
+  // Added: Testing for array d3_array, what does testing do?
   catch (e) {
     d3_array = function(list) {
       var i = list.length, array = new Array(i);
@@ -40,15 +44,24 @@
     };
   }
   
-  // Added: More testing
+  // Added: More testing...explain
   try {
     d3_document.createElement("div").style.setProperty("opacity", 0, "");
   } 
   
+  // Added: More testing, again no clue what it test.
   catch (error) {
-      
-    var d3_element_prototype = d3_window.Element.prototype, d3_element_setAttribute = d3_element_prototype.setAttribute, d3_element_setAttributeNS = d3_element_prototype.setAttributeNS, d3_style_prototype = d3_window.CSSStyleDeclaration.prototype, d3_style_setProperty = d3_style_prototype.setProperty;
     
+    // Added: Variable d3_document is created, if others are variables would look cleaner on their own line.  
+    var d3_element_prototype = d3_window.Element.prototype, d3_element_setAttribute = d3_element_prototype.setAttribute, d3_element_setAttributeNS = d3_element_prototype.setAttributeNS, d3_style_prototype = d3_window.CSSStyleDeclaration.prototype, d3_style_setProperty = d3_style_prototype.setProperty;
+    // Added: New Code Below
+    // var d3_element_prototype = d3_window.Element.prototype;
+    // var d3_element_setAttribute = d3_element_prototype.setAttribute;
+    // var d3_element_setAttributeNS = d3_element_prototype.setAttributeNS;
+    // ..
+    // ..
+    
+    // Added: Variables d3_element_prototype call upon functions to do something
     d3_element_prototype.setAttribute = function(name, value) {
       d3_element_setAttribute.call(this, name, value + "");
     };
@@ -62,30 +75,36 @@
     };
   }
   
+  // Added: Function used to find the ascending value of d3
   d3.ascending = function(a, b) {
     return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
   };
   
+  // Added: Function used to find the descending value of d3
   d3.descending = function(a, b) {
     return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
   };
   
+  // Added: Function used to find the min value for d3
   d3.min = function(array, f) {
       
     var i = -1, n = array.length, a, b;
     
     if (arguments.length === 1) {
+      // Cloud9 says to use '!==' when comparing to 'null'
       while (++i < n && !((a = array[i]) != null && a <= a)) a = undefined;
       while (++i < n) if ((b = array[i]) != null && a > b) a = b;
     } 
     
     else {
+      // Cloud9 says to use '!==' when comparing to 'null'
       while (++i < n && !((a = f.call(array, array[i], i)) != null && a <= a)) a = undefined;
       while (++i < n) if ((b = f.call(array, array[i], i)) != null && a > b) a = b;
     }
     return a;
   };
   
+  // Added: Function used to find the max value for d3
   d3.max = function(array, f) {
       
     var i = -1, n = array.length, a, b;
@@ -102,6 +121,7 @@
     return a;
   };
   
+  // Added: Function used to find the extent of d3
   d3.extent = function(array, f) {
       
     var i = -1, n = array.length, a, b, c;
@@ -124,6 +144,7 @@
     return [ a, c ];
   };
   
+  // Added: Function used to find the sum of d3
   d3.sum = function(array, f) {
       
     var s = 0, n = array.length, a, i = -1;
