@@ -75,17 +75,17 @@
     };
   }
   
-  // Added: Function used to find the ascending value of d3
+  // Added: Function used to find the ascending value of d3...
   d3.ascending = function(a, b) {
     return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
   };
   
-  // Added: Function used to find the descending value of d3
+  // Added: Function used to find the descending value of d3...
   d3.descending = function(a, b) {
     return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
   };
   
-  // Added: Function used to find the min value for d3
+  // Added: Function used to find the min value for d3...
   d3.min = function(array, f) {
       
     var i = -1, n = array.length, a, b;
@@ -104,29 +104,32 @@
     return a;
   };
   
-  // Added: Function used to find the max value for d3
+  // Added: Function used to find the max value for d3...
   d3.max = function(array, f) {
       
     var i = -1, n = array.length, a, b;
     
     if (arguments.length === 1) {
+      // Cloud9 says to use '!==' when comparing to 'null'    
       while (++i < n && !((a = array[i]) != null && a <= a)) a = undefined;
       while (++i < n) if ((b = array[i]) != null && b > a) a = b;
     } 
     
     else {
+      // Cloud9 says to use '!==' when comparing to 'null'    
       while (++i < n && !((a = f.call(array, array[i], i)) != null && a <= a)) a = undefined;
       while (++i < n) if ((b = f.call(array, array[i], i)) != null && b > a) a = b;
     }
     return a;
   };
   
-  // Added: Function used to find the extent of d3
+  // Added: Function used to find the extent of d3...
   d3.extent = function(array, f) {
       
     var i = -1, n = array.length, a, b, c;
     
     if (arguments.length === 1) {
+      // Cloud9 says to use '!==' when comparing to 'null'    
       while (++i < n && !((a = c = array[i]) != null && a <= a)) a = c = undefined;
       while (++i < n) if ((b = array[i]) != null) {
         if (a > b) a = b;
@@ -135,6 +138,7 @@
     }
     
     else {
+      // Cloud9 says to use '!==' when comparing to 'null'    
       while (++i < n && !((a = c = f.call(array, array[i], i)) != null && a <= a)) a = undefined;
       while (++i < n) if ((b = f.call(array, array[i], i)) != null) {
         if (a > b) a = b;
@@ -144,7 +148,7 @@
     return [ a, c ];
   };
   
-  // Added: Function used to find the sum of d3
+  // Added: Function used to find the sum of d3...
   d3.sum = function(array, f) {
       
     var s = 0, n = array.length, a, i = -1;
@@ -159,35 +163,44 @@
     return s;
   };
   
+  // Added: Function d3_number do something...
   function d3_number(x) {
     return x != null && !isNaN(x);
   }
   
+  // Added: Function used to find the mean of d3...
   d3.mean = function(array, f) {
       
     var n = array.length, a, m = 0, i = -1, j = 0;
     
     if (arguments.length === 1) {
+      // Added: Possibly new line after while statement    
       while (++i < n) if (d3_number(a = array[i])) m += (a - m) / ++j;
     } 
     
     else {
+      // Added: Possibly new line after while statement
       while (++i < n) if (d3_number(a = f.call(array, array[i], i))) m += (a - m) / ++j;
     }
     return j ? m : undefined;
   };
   
+  // Added: Function used to quantile? d3...
   d3.quantile = function(values, p) {
     var H = (values.length - 1) * p + 1, h = Math.floor(H), v = +values[h - 1], e = H - h;
+    // Added: If possible split up like example above, each variable on its own line
     return e ? v + e * (values[h] - v) : v;
   };
   
+  // Added: Function finds the median of d3...
   d3.median = function(array, f) {
     if (arguments.length > 1) array = array.map(f);
     array = array.filter(d3_number);
+    // Added: Cloud9 says A leading decimal point can be confused with a dot: .5
     return array.length ? d3.quantile(array.sort(d3.ascending), .5) : undefined;
   };
   
+  // Added: Function finds the bisector of d3...
   d3.bisector = function(f) {
     return {
       
@@ -215,6 +228,7 @@
     };
   };
   
+  // Added: Variable d3_bisector is set to value of bisector
   var d3_bisector = d3.bisector(function(d) {
     return d;
   });
@@ -222,6 +236,7 @@
   d3.bisectLeft = d3_bisector.left;
   d3.bisect = d3.bisectRight = d3_bisector.right;
   
+  // Added: Fuction that does some shuffling of d3...
   d3.shuffle = function(array) {
     
     var m = array.length, t, i;
@@ -233,8 +248,10 @@
     return array;
   };
   
+  // Added: Function does something call permute to d3...
   d3.permute = function(array, indexes) {
     
+    // Added: If possible split up variable on each line.
     var i = indexes.length, permutes = new Array(i);
     
     while (i--) permutes[i] = array[indexes[i]];
