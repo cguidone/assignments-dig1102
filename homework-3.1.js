@@ -58,8 +58,8 @@
     // var d3_element_prototype = d3_window.Element.prototype;
     // var d3_element_setAttribute = d3_element_prototype.setAttribute;
     // var d3_element_setAttributeNS = d3_element_prototype.setAttributeNS;
-    // ..
-    // ..
+    // var d3_style_prototype = d3_window.CSSStyleDeclaration.prototype
+    // var d3_style_setProperty = d3_style_prototype.setProperty;
     
     // Added: Variables d3_element_prototype call upon functions to do something
     d3_element_prototype.setAttribute = function(name, value) {
