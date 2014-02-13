@@ -101,7 +101,9 @@
       while (++i < n && !((a = f.call(array, array[i], i)) != null && a <= a)) a = undefined;
       while (++i < n) if ((b = f.call(array, array[i], i)) != null && a > b) a = b;
     }
+    
     return a;
+  
   };
   
   // Added: Function used to find the max value for d3...
@@ -120,7 +122,9 @@
       while (++i < n && !((a = f.call(array, array[i], i)) != null && a <= a)) a = undefined;
       while (++i < n) if ((b = f.call(array, array[i], i)) != null && b > a) a = b;
     }
+    
     return a;
+  
   };
   
   // Added: Function used to find the extent of d3...
@@ -131,6 +135,7 @@
     if (arguments.length === 1) {
       // Cloud9 says to use '!==' when comparing to 'null'    
       while (++i < n && !((a = c = array[i]) != null && a <= a)) a = c = undefined;
+      
       while (++i < n) if ((b = array[i]) != null) {
         if (a > b) a = b;
         if (c < b) c = b;
@@ -140,12 +145,15 @@
     else {
       // Cloud9 says to use '!==' when comparing to 'null'    
       while (++i < n && !((a = c = f.call(array, array[i], i)) != null && a <= a)) a = undefined;
+      
       while (++i < n) if ((b = f.call(array, array[i], i)) != null) {
         if (a > b) a = b;
         if (c < b) c = b;
       }
     }
+    
     return [ a, c ];
+    
   };
   
   // Added: Function used to find the sum of d3...
@@ -160,11 +168,14 @@
     else {
       while (++i < n) if (!isNaN(a = +f.call(array, array[i], i))) s += a;
     }
+    
     return s;
+    
   };
   
   // Added: Function d3_number do something...
   function d3_number(x) {
+    // Cloud9 says to use '!==' when comparing to 'null'
     return x != null && !isNaN(x);
   }
   
@@ -182,14 +193,22 @@
       // Added: Possibly new line after while statement
       while (++i < n) if (d3_number(a = f.call(array, array[i], i))) m += (a - m) / ++j;
     }
+    
     return j ? m : undefined;
+    
   };
   
   // Added: Function used to quantile? d3...
   d3.quantile = function(values, p) {
     var H = (values.length - 1) * p + 1, h = Math.floor(H), v = +values[h - 1], e = H - h;
-    // Added: If possible split up like example above, each variable on its own line
+    // Added: If possible split up variables on their own lines and explain what they stand represent.
+    // var H = (value.length - 1) * p + 1;
+    // var h = Math.floor(H);
+    // var v = +values[h - 1];
+    // var e = H - h;
+    
     return e ? v + e * (values[h] - v) : v;
+    
   };
   
   // Added: Function finds the median of d3...
@@ -212,7 +231,9 @@
           var mid = lo + hi >>> 1;
           if (f.call(a, a[mid], mid) < x) lo = mid + 1; else hi = mid;
         }
+        
         return lo;
+        
       },
       
       right: function(a, x, lo, hi) {
@@ -223,7 +244,9 @@
           var mid = lo + hi >>> 1;
           if (x < f.call(a, a[mid], mid)) hi = mid; else lo = mid + 1;
         }
+        
         return lo;
+        
       }
     };
   };
@@ -245,7 +268,9 @@
       i = Math.random() * m-- | 0;
       t = array[m], array[m] = array[i], array[i] = t;
     }
+    
     return array;
+    
   };
   
   // Added: Function does something call permute to d3...
@@ -255,5 +280,6 @@
     var i = indexes.length, permutes = new Array(i);
     
     while (i--) permutes[i] = array[indexes[i]];
+    
     return permutes;
   };
