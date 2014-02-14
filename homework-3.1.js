@@ -39,6 +39,8 @@
   catch (e) {
     d3_array = function(list) {
       var i = list.length, array = new Array(i);
+      // var i = list.length
+      // var array = new Array(i);
       while (i--) array[i] = list[i];
       return array;
     };
@@ -88,7 +90,12 @@
   // Added: Function used to find the min value for d3...
   d3.min = function(array, f) {
       
+    // Again variables on their own line  
     var i = -1, n = array.length, a, b;
+    // var i = -1;
+    // var n = array.length;
+    // var a;
+    // var b;
     
     if (arguments.length === 1) {
       // Cloud9 says to use '!==' when comparing to 'null'
@@ -110,6 +117,11 @@
   d3.max = function(array, f) {
       
     var i = -1, n = array.length, a, b;
+    // Added: If possible split up variables on their own lines and explain what they stand represent.
+    // var i = -1;
+    // var n = array.length;
+    // var a;
+    // var b;
     
     if (arguments.length === 1) {
       // Cloud9 says to use '!==' when comparing to 'null'    
@@ -131,6 +143,12 @@
   d3.extent = function(array, f) {
       
     var i = -1, n = array.length, a, b, c;
+    // Added: If possible split up variables on their own lines and explain what they stand represent.
+    // var i = -1;
+    // var n = array.length,
+    // var a;
+    // var b;
+    // var c;
     
     if (arguments.length === 1) {
       // Cloud9 says to use '!==' when comparing to 'null'    
@@ -160,6 +178,11 @@
   d3.sum = function(array, f) {
       
     var s = 0, n = array.length, a, i = -1;
+    // Added: If possible split up variables on their own lines and explain what they stand represent.
+    // var s = 0;
+    // var n = array.length;
+    // var a;
+    // var i = -1;
     
     if (arguments.length === 1) {
       while (++i < n) if (!isNaN(a = +array[i])) s += a;
@@ -183,6 +206,12 @@
   d3.mean = function(array, f) {
       
     var n = array.length, a, m = 0, i = -1, j = 0;
+    // Added: If possible split up variables on their own lines and explain what they stand represent.
+    // var n = array.length;
+    // var a;
+    // var m = 0;
+    // var i = -1;
+    // var j = 0;
     
     if (arguments.length === 1) {
       // Added: Possibly new line after while statement    
@@ -263,6 +292,10 @@
   d3.shuffle = function(array) {
     
     var m = array.length, t, i;
+    // Added: If possible split up variable on each line.
+    // var m = array.length;
+    // var t;
+    // var i;
     
     while (m) {
       i = Math.random() * m-- | 0;
@@ -278,6 +311,8 @@
     
     // Added: If possible split up variable on each line.
     var i = indexes.length, permutes = new Array(i);
+    // var i = indexes.length
+    // var permutes = new Array(i);
     
     while (i--) permutes[i] = array[indexes[i]];
     
