@@ -12,10 +12,22 @@
 
 `/cguidone/annyang/annyang.js:133`
 ```javascript
+          // Array results[i]
           commandText = results[i].transcript.trim();
 ```
 
 `/cguidone/annyang/annyang.js:145`
 ```javascript
+            // Varaible result created, Array commandsList[j]
             var result = commandsList[j].command.exec(commandText);
+```
+
+`/cguidone/annyang/annyang.js:149`
+```javascript
+                root.console.log('command matched: %c'+commandsList[j].originalPhrase, debugStyle);
+```
+
+`/cguidone/annyang/annyang.js:155`
+```javascript
+              commandsList[j].callback.apply(this, parameters);
 ```
