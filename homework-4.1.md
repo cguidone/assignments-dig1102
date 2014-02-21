@@ -1,6 +1,7 @@
 `/cguidone/annyang/annyang.js:26`
 ```javascript
-    // Creating an array for variable commandsList
+    // Variable commandsList
+    // Array built for commandsList
     var commandsList = [];
 ```
 
@@ -13,6 +14,7 @@
 
 `/cguidone/annyang/annyang.js:133`
 ```javascript
+    // Variable commandText
     // Array results[i]
     commandText = results[i].transcript.trim();
 ```
@@ -33,7 +35,7 @@
 `/cguidone/annyang/annyang.js:155`
 ```javascript
     // Array commandsList[j]
-    ommandsList[j].callback.apply(this, parameters);
+    commandsList[j].callback.apply(this, parameters);
 ```
 
 `/cguidone/annyang/annyang.js:167`
