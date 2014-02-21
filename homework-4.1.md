@@ -6,7 +6,7 @@
 
 `/cguidone/annyang/annyang.js:28`
 ```javascript
-    // Variable callbacks is created, new arrays are built inside of the array callbacks
+    // Variable callbacks is created, arrays are built inside of the array callbacks
     var callbacks = { start: [], error: [], end: [], result: [], resultMatch: [], resultNoMatch: [], errorNetwork: [], errorPermissionBlocked: [], errorPermissionDenied: [] };
 ```
 
@@ -34,13 +34,20 @@
     ommandsList[j].callback.apply(this, parameters);
 ```
 
-`/cguidone/annyang/annyang.js:155`
+`/cguidone/annyang/annyang.js:167`
 ```javascript
     // Build array commandsList
     commandsList = [];
 ```
 
-`/cguidone/annyang/annyang.js:155`
+`/cguidone/annyang/annyang.js:223`
 ```javascript
+    // Array inside an array, || or
+    cb = root[commands[phrase]] || commands[phrase];
+```
+
+`/cguidone/annyang/annyang.js:230`
+```javascript
+    // Push commandsList, add to tail end of list
     commandsList.push({ command: command, callback: cb, originalPhrase: phrase });
 ```
