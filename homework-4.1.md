@@ -36,7 +36,7 @@
 
 `/cguidone/annyang/annyang.js:167`
 ```javascript
-    // Build array commandsList
+    // resets array commandsList
     commandsList = [];
 ```
 
@@ -48,6 +48,30 @@
 
 `/cguidone/annyang/annyang.js:230`
 ```javascript
-    // Push commandsList, add to tail end of list
+    // Push commandsList add everything in array to tail end of list
     commandsList.push({ command: command, callback: cb, originalPhrase: phrase });
+```
+
+`/cguidone/annyang/annyang.js:240`
+```javascript
+    // Array.isArray(commandsToRemove)
+    commandsToRemove = Array.isArray(commandsToRemove) ? commandsToRemove : [commandsToRemove];
+```
+
+`/cguidone/annyang/annyang.js:243`
+```javascript
+    // Array commandsToRemove[i]
+    if (commandsToRemove[i] === command.originalPhrase) {
+```
+
+`/cguidone/annyang/annyang.js:255`
+```javascript
+    // Array callbacks[type]
+    if (callbacks[type]  === undefined) {
+```
+
+`/cguidone/annyang/annyang.js:262`
+```javascript
+    // Array callbacks[type], push - add everything in array to tail end of list
+    callbacks[type].push({callback: cb, context: context || this});
 ```
