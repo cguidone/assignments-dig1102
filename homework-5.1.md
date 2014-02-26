@@ -35,6 +35,8 @@
 `/cguidone/jquery/src/selector-native.js:77-79`
 
 ```javascript
+        // if selector or type of selector is not a string 
+        // return results
 		if ( !selector || typeof selector !== "string" ) {
 			return results;
 		}
@@ -43,6 +45,8 @@
 `/cguidone/jquery/src/selector-native.js:82-84`
 
 ```javascript
+        // if context.nodeType is not equal 1 and nodeType not equal to 9
+        // return an array
 		if ( (nodeType = context.nodeType) !== 1 && nodeType !== 9 ) {
 			return [];
 		}
