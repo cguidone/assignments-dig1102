@@ -31,9 +31,10 @@
 				}
 
 				// Maintain original order
+				// if neither are true above return 0
 				return 0;
 			}
-
+            // if compare is not true return compare & 4 ? -1 : 1
 			return compare & 4 ? -1 : 1;
 		}
 ```
@@ -74,5 +75,23 @@
 			// then exectue jQuery.merge( results, context.querySelectorAll(selector)
 		} else {
 			jQuery.merge( results, context.querySelectorAll(selector) );
+		}
+```
+
+`/cguidone/jquery/src/selector-native.js:107-116`
+
+```javascript
+        // if selector_hasDuplicate is true then run both while loops
+		if ( selector_hasDuplicate ) {
+			while ( (elem = results[i++]) ) {
+			    // if elem is exactly equal to the array results[i]
+			    // then j j = duplicates.push( i )
+				if ( elem === results[ i ] ) {
+					j = duplicates.push( i );
+				}
+			}
+			while ( j-- ) {
+				results.splice( duplicates[ j ], 1 );
+			}
 		}
 ```
