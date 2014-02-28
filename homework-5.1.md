@@ -1,7 +1,7 @@
 `/cguidone/jquery/src/selector-native.js:38-41`
 
 ```javascript
-        // if a is exactly equal to b the selector_hasDuplicate is equal to true
+        // if a is exactly equal to b then selector_hasDuplicate is equal to true
         // returns 0
 		if ( a === b ) {
 			selector_hasDuplicate = true;
@@ -15,7 +15,7 @@
         // if compare is true then run next if
 		if ( compare ) {
 			// Disconnected nodes
-			// if compare and 1 is ture then run next if
+			// if compare and 1 are ture then run next if
 			if ( compare & 1 ) {
 
 				// Choose the first element that is related to our document
@@ -42,7 +42,7 @@
 `/cguidone/jquery/src/selector-native.js:77-79`
 
 ```javascript
-        // if selector or type of selector is not a string 
+        // if not selector or typeof selector is not a string 
         // return results
 		if ( !selector || typeof selector !== "string" ) {
 			return results;
@@ -52,7 +52,7 @@
 `/cguidone/jquery/src/selector-native.js:82-84`
 
 ```javascript
-        // if context.nodeType is not equal 1 and nodeType not equal to 9
+        // if context.nodeType is not equal to 1 and nodeType is not equal to 9
         // return an array
 		if ( (nodeType = context.nodeType) !== 1 && nodeType !== 9 ) {
 			return [];
@@ -85,7 +85,7 @@
 		if ( selector_hasDuplicate ) {
 			while ( (elem = results[i++]) ) {
 			    // if elem is exactly equal to the array results[i]
-			    // then j j = duplicates.push( i )
+			    // then j = duplicates.push( i )
 				if ( elem === results[ i ] ) {
 					j = duplicates.push( i );
 				}
@@ -93,5 +93,27 @@
 			while ( j-- ) {
 				results.splice( duplicates[ j ], 1 );
 			}
+		}
+```
+
+`/cguidone/jquery/src/selector-native.js:126-137`
+
+```javascript
+        // if not nodeType is true then proceed to while loop
+		if ( !nodeType ) {
+			// If no nodeType, this is expected to be an array
+			while ( (node = elem[i++]) ) {
+				// Do not traverse comment nodes
+				ret += jQuery.text( node );
+			}
+	    // if !nodeType is false test if nodeType is exactly equal to 1 or 9 or 11 then
+	    // return elem.textContent
+		} else if ( nodeType === 1 || nodeType === 9 || nodeType === 11 ) {
+			// Use textContent for elements
+			return elem.textContent;
+		// if !nodeType is false test if nodeType is exacly equal to 3 or 4 then
+		// return elem.nodeValue
+		} else if ( nodeType === 3 || nodeType === 4 ) {
+			return elem.nodeValue;
 		}
 ```
