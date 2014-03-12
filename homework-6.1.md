@@ -1,4 +1,4 @@
-`/cguidone/annyang.js:136`
+`/cguidone/annyang/annyang.js:136`
 
 ```javascript
         // variable i is set to 0
@@ -7,7 +7,7 @@
         for (var i = 0; i<results.length; i++) {
 ```
 
-`/cguidone/annyang.js:144`
+`/cguidone/annyang/annyang.js:144`
 
 ```javascript
           // variable j is set to 0
@@ -17,14 +17,14 @@
           for (var j = 0, l = commandsList.length; j < l; j++) {
 ```
 
-`/cguidone/annyang.js:221`
+`/cguidone/annyang/annyang.js:221`
 
 ```javascript
       //
       for (var phrase in commands) {
 ```
 
-`/cguidone/annyang.js:242`
+`/cguidone/annyang/annyang.js:242`
 
 ```javascript
         // variable i is set to 0
