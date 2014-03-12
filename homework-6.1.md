@@ -20,7 +20,7 @@
 `/cguidone/annyang/annyang.js:221`
 
 ```javascript
-      //
+      // Mozilla.org - Iterates over the enumerable properties of an object, in arbitrary order. For each distinct property, statements can be executed.
       for (var phrase in commands) {
 ```
 
@@ -31,4 +31,39 @@
         // while i is less than the length of commandsToRemove run loop
         // increment i by 1
         for (var i = 0; i<commandsToRemove.length; i++) {
+```
+
+`/cguidone/jquery/src/traversing.js:24`
+
+```javascript
+        // while elem equals the array elem[dir] and elem.nodeType is not equal to 9 run loop
+		while ( (elem = elem[ dir ]) && elem.nodeType !== 9 ) {
+```
+
+`/cguidone/jquery/src/traversing.js:38`
+
+```javascript
+        // 
+				for ( ; n; n = n.nextSibling ) {
+```
+
+`/cguidone/jquery/src/traversing.js:55`
+
+```javascript
+        // 
+			for ( ; i < l; i++ ) {
+```
+
+`/cguidone/jquery/src/traversing.js:73`
+
+```javascript
+        // 
+			for ( cur = this[i]; cur && cur !== context; cur = cur.parentNode ) {
+```
+
+`/cguidone/jquery/src/traversing.js:129`
+
+```javascript
+        // 
+	while ( (cur = cur[dir]) && cur.nodeType !== 1 ) {}
 ```
