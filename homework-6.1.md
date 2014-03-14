@@ -43,31 +43,31 @@
 `/cguidone/jquery/src/traversing.js:38`
 
 ```javascript
-        // while n is equal to n.nextSibling run loop
+                // while n is equal to n.nextSibling run loop
 				for ( ; n; n = n.nextSibling ) {
 ```
 
 `/cguidone/jquery/src/traversing.js:55`
 
 ```javascript
-        // while i is less than l run loop
-        // increment i by 1
+            // while i is less than l run loop
+            // increment i by 1
 			for ( ; i < l; i++ ) {
 ```
 
 `/cguidone/jquery/src/traversing.js:73`
 
 ```javascript
-        // variable cur equals array this[]
-        // while cur and cur is not equal to context run loop
-        // cur is set to cur.parentNode each time loop in run
+            // variable cur equals array this[]
+            // while cur and cur is not equal to context run loop
+            // cur is set to cur.parentNode each time loop in run
 			for ( cur = this[i]; cur && cur !== context; cur = cur.parentNode ) {
 ```
 
 `/cguidone/jquery/src/traversing.js:129`
 
 ```javascript
-        // while cur is equal to the array cur[] and cur.nodeType is not equal to 1 run loop
+    // while cur is equal to the array cur[] and cur.nodeType is not equal to 1 run loop
 	while ( (cur = cur[dir]) && cur.nodeType !== 1 ) {}
 ```
 
