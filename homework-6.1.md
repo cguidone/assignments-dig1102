@@ -74,17 +74,15 @@
 `/cguidone/jquery/src/callbacks.js:72`
 
 ```javascript
+            // while list and firingIndex are less than firingLength run loop
+            // increment firingIndex by 1
 			for ( ; list && firingIndex < firingLength; firingIndex++ ) {
 ```
 
 `/cguidone/jquery/src/callbacks.js:129`
 
 ```javascript
-						while ( ( index = jQuery.inArray( arg, list, index ) ) > -1 ) {
-```
-
-`/cguidone/jquery/src/callbacks.js:129`
-
-```javascript
+                        // index equals jQuery.inArray( arg, list, index )
+                        // while index is great than -1 run loop
 						while ( ( index = jQuery.inArray( arg, list, index ) ) > -1 ) {
 ```
