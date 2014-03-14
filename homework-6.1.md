@@ -70,3 +70,21 @@
         // while cur is equal to the array cur[] and cur.nodeType is not equal to 1 run loop
 	while ( (cur = cur[dir]) && cur.nodeType !== 1 ) {}
 ```
+
+`/cguidone/jquery/src/callbacks.js:72`
+
+```javascript
+			for ( ; list && firingIndex < firingLength; firingIndex++ ) {
+```
+
+`/cguidone/jquery/src/callbacks.js:129`
+
+```javascript
+						while ( ( index = jQuery.inArray( arg, list, index ) ) > -1 ) {
+```
+
+`/cguidone/jquery/src/callbacks.js:129`
+
+```javascript
+						while ( ( index = jQuery.inArray( arg, list, index ) ) > -1 ) {
+```
