@@ -1,7 +1,9 @@
 `/cguidone/jquery/serialize.js:15-41`
 
 ```javascript
+// Function buildParams is sent the values prefix, obj, traditional and add
 function buildParams( prefix, obj, traditional, add ) {
+    // Variable name is created
 	var name;
 
 	if ( jQuery.isArray( obj ) ) {
@@ -33,6 +35,7 @@ function buildParams( prefix, obj, traditional, add ) {
 `/cguidone/jquery/serialize.js:45-76`
 
 ```javascript
+// jQuery.param is equal to a function which is sent the values a and traditional
 jQuery.param = function( a, traditional ) {
 	var prefix,
 		s = [],
