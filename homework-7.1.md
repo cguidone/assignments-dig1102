@@ -24,14 +24,14 @@ function buildParams( prefix, obj, traditional, add ) {
 				buildParams( prefix + "[" + ( typeof v === "object" ? i : "" ) + "]", v, traditional, add );
 			}
 		});
-
+    // - Else if boolean. if traditional is false and jQuery.type(obj) is exactly equal to object then continue
 	} else if ( !traditional && jQuery.type( obj ) === "object" ) {
 		// Serialize object item.
 		for ( name in obj ) {
     		// - Function buildParams is sent the arguments prefix + "[" + name + "]", obj[ name ], traditional, and add.
 			buildParams( prefix + "[" + name + "]", obj[ name ], traditional, add );
 		}
-
+    // - Else boolen. If and Else if statements are not true then run program add(prefix, obj)
 	} else {
 		// Serialize scalar item.
 		add( prefix, obj );
@@ -56,6 +56,7 @@ jQuery.param = function( a, traditional ) {
 		};
 
 	// Set traditional to true for jQuery <= 1.3.2 behavior.
+	// - If boolean. If traditional is exactly equal to undefined.
 	if ( traditional === undefined ) {
 		traditional = jQuery.ajaxSettings && jQuery.ajaxSettings.traditional;
 	}
