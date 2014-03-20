@@ -1,20 +1,26 @@
 `/cguidone/jquery/serialize.js:15-41`
 
 ```javascript
-// Function buildParams is sent the values prefix, obj, traditional and add
+// - Function buildParams is sent the arguments prefix, obj, traditional and add.
 function buildParams( prefix, obj, traditional, add ) {
-    // Variable name is created
+    // - Variable name is created.
 	var name;
-
+	
+    // - If boolean statement to see if jQuery is an array sent the argument obj. If true continue, if false continue to else if.
 	if ( jQuery.isArray( obj ) ) {
 		// Serialize array item.
+		// - Function inside a function. jQuery.each is passed the arguments obj and function (i, v).
+		// - Function is passed the arguments i and v.
 		jQuery.each( obj, function( i, v ) {
+		    // - If boolean statement, if traditional or function rbracket.test(prefix) is true then run function add(prefix, v).
+		    // - If false then continue to else statement.
 			if ( traditional || rbracket.test( prefix ) ) {
 				// Treat each array item as a scalar.
 				add( prefix, v );
 
 			} else {
 				// Item is non-scalar (array or object), encode its numeric index.
+				// - Function buildParams is sent the arguments prefix + "[" + ( typeof v === "object" ? i : "" ) + "]", v, traditional and add.
 				buildParams( prefix + "[" + ( typeof v === "object" ? i : "" ) + "]", v, traditional, add );
 			}
 		});
@@ -22,6 +28,7 @@ function buildParams( prefix, obj, traditional, add ) {
 	} else if ( !traditional && jQuery.type( obj ) === "object" ) {
 		// Serialize object item.
 		for ( name in obj ) {
+    		// - Function buildParams is sent the arguments prefix + "[" + name + "]", obj[ name ], traditional, and add.
 			buildParams( prefix + "[" + name + "]", obj[ name ], traditional, add );
 		}
 
@@ -35,10 +42,13 @@ function buildParams( prefix, obj, traditional, add ) {
 `/cguidone/jquery/serialize.js:45-76`
 
 ```javascript
-// jQuery.param is equal to a function which is sent the values a and traditional
+// - jQuery.param is equal to a function which is sent the arguments a and traditional.
 jQuery.param = function( a, traditional ) {
+    // - Variable prefix is created.
 	var prefix,
+	    // - Variable s is set to an array.
 		s = [],
+		// - add is equal to a function which is sent the arguments key and value
 		add = function( key, value ) {
 			// If value is a function, invoke it and return its value
 			value = jQuery.isFunction( value ) ? value() : ( value == null ? "" : value );
