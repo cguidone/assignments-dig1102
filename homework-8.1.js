@@ -22,6 +22,10 @@ var assert = require("assert");
  *   +1 |  +1 |  +2
 */
 
+assert.equal(add(-1, -1), -2);
+
+function add(a, b) {}
+
 /**
  * Test plan for subtraction():
  * 
