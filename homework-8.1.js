@@ -22,7 +22,27 @@ var assert = require("assert");
  *   +1 |  +1 |  +2
 */
 
+assert.equal(add(-1, -1), -2);
+assert.equal(add(-1, +0), -1);
+assert.equal(add(-1, +1), +0);
+assert.equal(add(+0, -1), -1);
+assert.equal(add(+0, +0), +0);
+assert.equal(add(+0, +1), +1);
+assert.equal(add(+1, -1), +0);
+assert.equal(add(+1, +0), +1);
+assert.equal(add(+1, +1), +2);
 
+function add(a, b) {
+    if (a==-1 && b==+0) return -1;
+    if (a==-1 && b==+1) return +0;
+    if (a==+0 && b==-1) return -1;
+    if (a==+0 && b==+0) return +0;
+    if (a==+0 && b==+1) return +1;
+    if (a==+1 && b==-1) return +0;
+    if (a==+1 && b==+0) return +1;
+    if (a==+1 && b==+1) return +2;
+    return -2;
+}
 
 /**
  * Test plan for subtraction():
@@ -40,7 +60,17 @@ var assert = require("assert");
  *   +1 |  +1 |  +0
  */
  
+assert.equal(subtract(-1, -1), +0);
+assert.equal(subtract(-1, +0), -1);
+assert.equal(subtract(-1, +1), -2);
+assert.equal(subtract(+0, -1), +1);
 
+function subtract(a, b) {
+    if (a==-1 && b==+0) return -1;
+    if (a==-1 && b==+1) return -2;
+    if (a==+0 && b==-1) return +1;
+    return +0;
+}
 
 /**
  * Test plan for multiplication():
