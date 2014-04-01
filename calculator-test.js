@@ -1,6 +1,11 @@
 var assert = require('assert'),
 calculator = require('./calculator.js');
 
+function assertEqual(actual, expected, message){
+    assert.equal(actual, expected, message);
+    console.log('pass!');
+}
+
 /**
  * Test plan for addition():
  * 
@@ -29,6 +34,13 @@ calculator = require('./calculator.js');
     [ +1, +1, +2 ],
  ];
 
+tests.forEach(function(row){
+    var a = row[0],
+        b = row[1],
+        c = row[2];
+    assertEqual(calculator.add(a, b), c, "add: fail on " + row);
+});
+
 /**
  * Test plan for subtraction():
  * 
@@ -56,6 +68,13 @@ calculator = require('./calculator.js');
     [ +1, +0, +1 ],
     [ +1, +1, +0 ],
  ];
+ 
+ tests.forEach(function(row){
+    var a = row[0],
+        b = row[1],
+        c = row[2];
+    assertEqual(calculator.subtract(a, b), c, "subtract: fail on " + row);
+});
 
 /**
  * Test plan for multiplication():
