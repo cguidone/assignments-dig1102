@@ -104,6 +104,13 @@ tests.forEach(function(row){
     [ +1, +1, +1 ],
  ];
  
+ tests.forEach(function(row) {
+    var a = row[0],
+        b = row[1],
+        c = row[2];
+    assertEqual(calculator.multiply(a, b), c, "multiply: fail on " + row);
+ });
+ 
   /**
  * Test plan for division():
  * 
@@ -131,3 +138,10 @@ tests.forEach(function(row){
     [ +1, +0, null ],
     [ +1, +1, +1 ],
  ];
+ 
+ tests.forEach(function(row) {
+    var a = row[0],
+        b = row[1],
+        c = row[2];
+    assertEqual(calculator.divide(a, b), c, "divide: fail on " + row);
+ });
