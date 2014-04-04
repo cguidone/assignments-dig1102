@@ -1,9 +1,16 @@
 module.exports = {
     
     add: function add (a, b) {
-        if( a == -1 && b == -1) return -2;
-        if( a == -1 && b == +0) return -1;
-        if( a == -1 && b == +1) return +0;
+        
+        if (a == -1) {
+            if (b == -1) return -2;
+            else if (b == +0) return -1;
+            else return +0;
+        }
+        
+//      if (a == -1 && b == -1) return -2;
+//      if( a == -1 && b == +0) return -1;
+//      if( a == -1 && b == +1) return +0;
         if( a == +0 && b == -1) return -1;
         if( a == +0 && b == +0) return +0;
         if( a == +0 && b == +1) return +1;
