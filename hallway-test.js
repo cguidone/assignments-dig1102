@@ -19,5 +19,8 @@ var assert = require('assert'),
 assert(hallway);
  
 assert(hallway.doors);
- 
+
 assert.equal(hallway.doors.length, 10);
+
+// for (var a = 0; a <= hallway.doors.length; a++);
+//    assert.equal(hallway.doors[a], -1, 'Error on door ' + a);
