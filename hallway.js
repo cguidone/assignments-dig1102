@@ -12,25 +12,13 @@ module.exports = {
         [ -1 ],
     ],
     
-/*    open : function open (a) {
-        
-        var doors = [
-            [ -1 ],
-            [ -1 ],
-            [ -1 ],
-            [ -1 ],
-            [ -1 ],
-            [ -1 ],
-            [ -1 ],
-            [ -1 ],
-            [ -1 ],
-            [ -1 ],
-            ];
-            
-        for (var b=0; b<= doors.length; b++) {
-        doors[b] = 1;
-        return doors[b];
+    openorclose : function openorclose (a) {
+        if (a === -1) {
+        return 1;
+        }
+        else {
+        return -1;    
         }
     },
-*/   
+    
 };

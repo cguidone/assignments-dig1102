@@ -40,5 +40,24 @@ for (var a = 0; a < hallway.doors.length; a++) {
 assert.equal(hallway.doors[a], -1, 'Error on door ' + a);
 }
 
-// var a=1;
-// assert.equal(hallway.open(a), 1, "Error on door");
+/**
+ * Second test to make sure all doors in Hallway are open
+ * Door #  | open(1)/closed(-1)
+ *      1  | 1
+ *      2  | 1
+ *      3  | 1
+ *      4  | 1
+ *      5  | 1
+ *      6  | 1
+ *      7  | 1
+ *      8  | 1
+ *      9  | 1
+ *      10 | 1
+*/
+
+assert(hallway.openorclose);
+
+assert.equal(hallway.openorclose(-1), 1);
+
+assert.equal(hallway.openorclose(1), -1);
+
