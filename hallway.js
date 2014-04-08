@@ -21,4 +21,8 @@ module.exports = {
         }
     },
     
+    firsttest : function firsttest (a) {
+        return 1;
+    },
+
 };
