@@ -21,8 +21,18 @@ module.exports = {
         }
     },
     
-    firsttest : function firsttest (a) {
-        return 1;
+    firsttest : function firsttest (b) {
+        for (var a=0; a < this.doors.length; a++) {
+            this.doors[a] = 1;    
+        }
+        return this.doors[b];
     },
+    
+    secondtest : function secondtest (b) {
+        for (var a=1; a < this.doors.length; a +=2) {
+            this.doors[a] = -1;
+        }
+        return this.doors[b];
+    }
 
 };

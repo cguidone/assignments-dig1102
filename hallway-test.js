@@ -14,7 +14,7 @@ var assert = require('assert'),
 */
     
 /**
- * First test to make sure all doors in Hallway are closed
+ * Test to make sure all doors in Hallway are closed at start.
  * Door #  | open(1)/closed(-1)
  *      1  | -1
  *      2  | -1
@@ -49,7 +49,7 @@ assert.equal(hallway.openorclose(-1), 1);
 assert.equal(hallway.openorclose(1), -1);
 
 /**
- * First test to make sure all doors in Hallway are open
+ * First test to make sure all doors in Hallway are open.
  * Door #  | open(1)/closed(-1)
  *      1  | 1
  *      2  | 1
@@ -65,7 +65,31 @@ assert.equal(hallway.openorclose(1), -1);
 
 assert(hallway.firsttest);
 
+assert.equal(hallway.firsttest(0), 1);
+
+// Test to makes sure all doors are open after first pass.
 for (var a = 0; a < hallway.doors.length; a++) {
-    assert.equal(hallway.firsttest(a), 1);
+assert.equal(hallway.firsttest(a), 1, 'Error on door ' + a);
 }
 
+/**
+ * Second test to close every other door in the Hallway.
+ * Door #  | open(1)/closed(-1)
+ *      1  | 1
+ *      2  | -1
+ *      3  | 1
+ *      4  | -1
+ *      5  | 1
+ *      6  | -1
+ *      7  | 1
+ *      8  | -1
+ *      9  | 1
+ *      10 | -1
+*/
+
+assert(hallway.secondtest);
+
+assert.equal(hallway.secondtest(0), 1);
+assert.equal(hallway.secondtest(1), -1);
+assert.equal(hallway.secondtest(2), 1);
+assert.equal(hallway.secondtest(3), -1);
