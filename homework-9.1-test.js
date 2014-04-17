@@ -13,35 +13,6 @@ var assert = require('assert'),
  * What is the state of the hallway at the end?
 */
 
-assert(hallway);
-
-assert(hallway.doors);
-
-assert.equal(hallway.doors.length, 10);
-
-assert.equal(hallway.OPENED, 1);
-assert.equal(hallway.CLOSED, -1);
-
-assert(hallway.toggle);
-
-assert.equal(hallway.toggle(hallway.OPENED), hallway.CLOSED);
-assert.equal(hallway.toggle(hallway.CLOSED), hallway.OPENED);
-
-assert.deepEqual(hallway.doors, [hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED]);
-
-assert(hallway.walk);
-
-assert.deepEqual(hallway.walk(0), [hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.OPENED]);
-assert.deepEqual(hallway.walk(1), [hallway.OPENED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED]);
-assert.deepEqual(hallway.walk(2), [hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED]);
-assert.deepEqual(hallway.walk(3), [hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.CLOSED, hallway.CLOSED]);
-assert.deepEqual(hallway.walk(4), [hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.OPENED, hallway.OPENED, hallway.OPENED, hallway.CLOSED, hallway.OPENED]);
-assert.deepEqual(hallway.walk(5), [hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.OPENED, hallway.CLOSED, hallway.OPENED]);
-assert.deepEqual(hallway.walk(6), [hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.OPENED]);
-assert.deepEqual(hallway.walk(7), [hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED]);
-assert.deepEqual(hallway.walk(8), [hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.OPENED]);
-assert.deepEqual(hallway.walk(9), [hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.CLOSED, hallway.OPENED, hallway.CLOSED]);
-
 
 
 
