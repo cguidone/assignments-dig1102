@@ -13,3 +13,6 @@ assert.equal(hallway.CLOSED, -1);
 assert(hallway.toggle);
 assert.equal(hallway.toggle(hallway.OPENED), hallway.CLOSED);
 assert.equal(hallway.toggle(hallway.CLOSED), hallway.OPENED);
+
+assert.deepEqual(hallway.doors, []);
+assert(hallway.init);
