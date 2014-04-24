@@ -5,8 +5,10 @@ module.exports = {
     
     doors  : [],
     
-    init   : function() {
-        this.doors[0] = -1;
+    init   : function(length) {
+        for (var door=0; door < length; door++) {
+        this.doors[door] = this.CLOSED;
+        }
         return this;
     },
     
@@ -15,7 +17,10 @@ module.exports = {
         if (door == this.CLOSED) return this.OPENED;
     },
     
-    walk   : +1,
+    walk   : function() {
+        this.doors[0] = this.toggle(this.doors[0]);
+        return this;
+    },
 
 
 };
