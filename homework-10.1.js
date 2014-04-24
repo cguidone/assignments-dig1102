@@ -5,15 +5,17 @@ module.exports = {
     
     doors  : [],
     
-    init   : +1,
+    init   : function() {
+        this.doors[0] = -1;
+        return this;
+    },
     
     toggle : function(door) {
         if (door == this.OPENED) return this.CLOSED;
         if (door == this.CLOSED) return this.OPENED;
     },
     
-    
-
+    walk   : +1,
 
 
 };
