@@ -31,9 +31,12 @@ assert.equal(hallway.init(10), hallway);
 assert.equal(hallway.doors.length, 10);
 
 for (var door=0; door < hallway.doors.length; door++) {
-assert.equal(hallway.doors[door], -1);
+assert.equal(hallway.doors[door], hallway.CLOSED);
 }
 
 assert(hallway.walk);
 assert.equal(hallway.walk(), hallway);
-assert.equal(hallway.doors[0], +1);
+
+for (var door=0; door < hallway.doors.length; door++) {
+assert.equal(hallway.doors[door], hallway.OPENED);
+}

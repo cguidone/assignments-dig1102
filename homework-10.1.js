@@ -18,7 +18,8 @@ module.exports = {
     },
     
     walk   : function() {
-        this.doors[0] = this.toggle(this.doors[0]);
+        for (var door=0; door < this.doors.length; door++)
+        this.doors[door] = this.toggle(this.doors[door]);
         return this;
     },
 
